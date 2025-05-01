@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carbon Footprint Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a class="logo" id="logo" href="acceuil.html">GreenCarbon</a>
+    <ul>
+      <li><a href="acceuil.html">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 12L13 12" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18 15L20.913 12.087V12.087C20.961 12.039 20.961 11.961 20.913 11.913V11.913L18 9" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 5V4.5V4.5C16 3.67157 15.3284 3 14.5 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H14.5C15.3284 21 16 20.3284 16 19.5V19.5V19" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></a></li>
+    </ul>    
+  </nav>
+
+  <main class="container">
+    <section id="user" class="user-section">
+      <div id="data"></div>    
+    </section>
+
+    <div id="line-chart-container">
+      <h3>Évolution de votre empreinte carbone</h3>
+      <canvas id="line-chart" width="600" height="300"></canvas>
+  </div>
+
+    <section id="calculator" class="calculator-section">
+      <h1>Calculer votre empreinte Carbone</h1>
+      <p class="subtitle">Ajoutez plusieurs dépenses et mesurez leur impact.</p>
+
+      <div id="expense-container"></div>
+      <button id="add-expense">Ajouter une dépense</button>
+      <button type="button" class="btn-primary" id="calculate">Calculer l’impact</button>
+
+      <div id="results" class="results hidden">
+        <h2>Votre empreinte Carbone</h2>
+        <div class="result-card">
+          <p>Emission Totale de CO2:</p>
+          <p id="co2-result" class="result-value">0 kg CO2</p>
+        </div>
+        <canvas id="chart"></canvas>
+        <div id="recommendations" class="recommendations"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="copyright">© GreenCarbon. Tous droits réservés.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon Footprint Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a class="logo" id="logo" href="acceuil.html">GreenCarbon</a>
+      <ul>
+        <li><a href="acceuil.html">Accueil</a></li>
+        <li><a href="#" class="active">Se Connecter</a></li>
+      </ul>    
+    </nav>
+
+  <main class="form-container">
+    <h2>Créer un compte</h2>
+    <div class="form-group">
+      <input id ="username" type="text" placeholder="Nom d'utilisateur">
+    </div>
+    <div class="form-group">
+      <input id ="email" type="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <input id ="password" type="password" placeholder="Mot de passe">
+      <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+    </div>
+    <button id="sign-up-btn">Créer mon compte</button>
+    <div class="login-link">
+      J’ai déjà un compte. <a href="login.html">Se connecter</a>
+    </div>
+  </main>
+
+  <footer style="position: fixed;">
+    <p>© 2025 GreenCarbon. Tous droits réservés.</p>
+  </footer>
+
+
+  <script>
+    document.getElementById('sign-up-btn').addEventListener('click', async (e) => {
+    e.preventDefault(); // Empêcher la soumission du formulaire par défaut
+
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (!username || !email || !password) {
+      alert('Tous les champs sont requis');
+      return;
+    }
+
+    const data = {
+      username: username,
+      email: email,
+      password: password,
+    };
+
+    try {
+      // Envoi de la requête POST au serveur
+      const response = await fetch('http://localhost:3000/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem('userId', result.userId); // Stocke l'ID de l'utilisateur
+        window.location.href = 'calculator.html'; // Redirige vers une page de profil ou autre
+      } else {
+          alert(result.message); 
+      }
+    } catch (error) {
+      console.error('Erreur de connexion au serveur:', error);
+      alert('Erreur lors de la création du compte');
+    }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

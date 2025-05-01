@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carbon Footprint Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="logo" id="logo" href="acceuil.html">GreenCarbon</a>
+    <ul>
+      <li><a href="#" class="active">Accueil</a></li>
+      <li><a href="login.html">Se Connecter</a></li>
+    </ul>    
+  </nav>
+
+
+  <header>
+    <h1>Gardez un œil sur votre empreinte carbone</h1>
+    <p>Un calcul simple, un impact réel 🌍</p>
+  </header>
+
+
+  <div id="plus-value" class="plus-value">
+    <div class="plus-value-wrapper">
+      <h2>Pourquoi choisir <span class="green-line">GreenCarbon</span> ?</h2>
+      <div class="flip-card-wrapper">
+        <div id="flip-one" class="flip-card-container" onclick="flipIt('one', event)" onmouseleave="flipIt('one', event)">
+          <div class="flip-card">
+            <div class="flip-card-summary">
+              Evaluez chaque jour votre empreinte carbone
+            </div>
+            <div class="flip-card-content">
+              Enregistrez chaque jour vos achats et suivez impact carbone au jour le jour. Idéal pour développer de bonnes habitudes !
+            </div>
+          </div>
+        </div>
+        <div id="flip-two" class="flip-card-container" onclick="flipIt('two', event)" onmouseleave="flipIt('two', event)">
+          <div class="flip-card">
+            <div class="flip-card-summary">
+              Obtenez des statistiques claires et visuelles de votre impact
+            </div>
+            <div class="flip-card-content">
+              Des graphiques simples pour comprendre vos émissions par catégorie, par jour ou par mois.
+            </div>
+         </div>
+        </div>
+        <div id="flip-three" class="flip-card-container" onclick="flipIt('three', event)" onmouseleave="flipIt('three', event)">
+          <div class="flip-card">
+            <div class="flip-card-summary">
+              Obtenez des recommandations personnalisées pour réduire votre empreinte carbone
+            </div>
+            <div class="flip-card-content">
+              Le système vous suggère des actions concrètes pour réduire votre empreinte selon votre profil d’achat.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="list-avis">
+    <div class="list-avis-wrapper">
+      <h2>Ce que nos <span class="green-line">utilisateurs</span> en pensent</h2>
+      <div class="avis-wrapper">
+        <div class="avis-container">
+          <div class="avis">
+            <p>En 2 semaines, j’ai réduit mon impact de 20%. Simple et efficace !</p>
+            <div class="avis-author">
+              <svg class="avatar" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+              </svg>
+              <span class="author-name">Sarah M.</span>
+            </div>
+          </div>
+        </div>
+        <div class="avis-container">
+          <div class="avis">
+            <p>Enfin un outil concret pour changer les choses au quotidien.</p>
+            <div class="avis-author">
+              <svg class="avatar" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+              </svg>
+              <span class="author-name">David L.</span>
+            </div>
+          </div>
+        </div>
+        <div class="avis-container">
+          <div class="avis">
+            <p>Un design épuré, des infos utiles, j’adore</p>
+            <div class="avis-author">
+              <svg class="avatar" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+              </svg>
+              <span class="author-name">Emma P.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <footer>
+    <p>© 2025 GreenCarbon. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    function flipIt(numero, event) {    let flip = document.getElementById(`flip-${numero}`);    if (event.type === 'click') {        flip.classList.toggle('flipped');    } else if (event.type === 'mouseleave') {        flip.classList.remove('flipped');    }}
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
