@@ -41,3 +41,24 @@ GreenCarbon est une application web permettant aux utilisateurs de **suivre leur
 ### 📦 Installer les dépendances :
 ```bash
 npm install
+```
+### Créer une base de données users_db et exécuter :
+````
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  is_admin BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+````
+
+Tu peux promouvoir un compte admin avec :
+````
+UPDATE users SET is_admin = 1 WHERE email = 'admin@green.com';
+````
+▶️ Lancer le backend :
+````
+node server.cjs
+````
