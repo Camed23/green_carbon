@@ -1,13 +1,3 @@
-﻿# green_carbon
-
-
-- Documentation du projet (fichier README.md) détaillé avec:
-Les instructions pour cloner, configurer et exécuter le projet, 
-Les étapes pour contribuer au projet (ex: conventions de commit).
-Une brève description des différentes parties du site et des fonctionnalités.
-Pull resquets : historique des révisions de code et des contributions de chaque
-Membre
-
 # 🌿 GreenCarbon
 
 GreenCarbon est une application web permettant aux utilisateurs de **suivre leur empreinte carbone** quotidienne en fonction de leurs dépenses, et aux administrateurs de **gérer les comptes** utilisateurs via une interface dédiée.
