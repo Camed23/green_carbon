@@ -3,7 +3,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 const app = express();
-const port = 3000;
+//const port = 3000;
 
 
 const bcrypt = require('bcryptjs');
@@ -14,6 +14,17 @@ const path = require('path');
 
 app.use(cors());  // Autorise toutes les origines
 app.use(express.json());
+
+
+const port = process.env.PORT || 3000;
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Redirection page d'accueil
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'acceuil.html'));
+});
+
 
 
 const db = mysql.createConnection({
